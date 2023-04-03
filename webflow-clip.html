@@ -1,10 +1,3 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset='utf-8' />
-  <title></title>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
   <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js'></script>
   <link href='https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
@@ -73,9 +66,7 @@
       border-bottom-color: rgb(61, 59, 59);
     }
   </style>
-</head>
 
-<body>
 
   <div id='map'></div>
   <script>
@@ -95,9 +86,9 @@
     mapboxgl.accessToken = 'pk.eyJ1IjoiYmhpcmJ5IiwiYSI6ImNsZngwcDc2NDA1ZWEzZ25vbzVxaW9nazQifQ.uu8tFEWYD_MSSdxM382ZKQ'; //Mapbox token
     var map = new mapboxgl.Map({
       container: 'map', // container id
-      style: 'mapbox://styles/mapbox/light-v11', // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
-      center: [-122.411, 37.785], // starting position [lng, lat]
-      zoom: 10,// starting zoom
+      style: 'mapbox://styles/bhirby/clfwvft0v001401p2931osal9', // YOUR TURN: choose a style: https://docs.mapbox.com/api/maps/#styles
+      center: [-89.409698, 43.07671], // starting position [lng, lat]
+      zoom: 5,// starting zoom
       transformRequest: transformRequest
     });
 
@@ -105,7 +96,7 @@
       $.ajax({
         type: "GET",
         //YOUR TURN: Replace with csv export link
-        url: 'https://docs.google.com/spreadsheets/d/1Jl5-jalFQoCxjSq5D_ei1klGL1UxJOuFvPR3pfsK2h0/edit?tqx=out:csv&sheet=Clients',
+        url: 'https://docs.google.com/spreadsheets/d/1Jl5-jalFQoCxjSq5D_ei1klGL1UxJOuFvPR3pfsK2h0/gviz/tq?tqx=out:csv&sheet=Clients',
         dataType: "text",
         success: function (csvData) { makeGeoJSON(csvData); }
       });
@@ -178,12 +169,4 @@
         });
       };
     });
-
-
-
-
-  </script>
-
-</body>
-
-</html>
+</script>
